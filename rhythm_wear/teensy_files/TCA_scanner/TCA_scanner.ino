@@ -6,7 +6,7 @@
 */
 #include "Wire.h"
 extern "C" {
-  #include "utility/twi.h" // from Wire library, so we can do bus scanning
+  #include "utility/twi.h" // from Wkire library, so we can do bus scanning
 }
 
 #define TCAADDR 0x70

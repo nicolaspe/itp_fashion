@@ -27,6 +27,7 @@ void setup() {
   // I2C communication
   Wire.begin();
   Serial.begin(9600);
+  Serial.println("teensy_metrovibrate");
 
   drv.begin();
   drv.selectLibrary(1);
