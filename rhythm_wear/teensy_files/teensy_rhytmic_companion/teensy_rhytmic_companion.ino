@@ -49,7 +49,7 @@ void setup() {
 
   // I2C communication
   Serial.begin(9600);
-  Serial.println("teensy_rhytmic_skin");
+  Serial.println("teensy_rhytmic_companion");
   Wire.begin();
 
   for(uint8_t i=1; i<7; i++){
@@ -89,7 +89,8 @@ void loop() {
     usbMIDI.sendNoteOn(1, 99, CHANNEL);
     
     // trigger vibronome
-    trig_vibration(5, 5);
+    trig_vibration(4, 5);
+//    trig_vibration(6, 5);
     
     // LED alternate
     led_state = !led_state;
@@ -163,19 +164,19 @@ void trig_vibration(uint8_t motor, int pattern){
       drv.setWaveform(1, 81); // #2 pattern - short ramp down
       drv.setWaveform(2, 0);  // end waveform
       break;
-    case 40:  // rhythm
-      drv.setWaveform(0, 4);  // #1 pattern
-      drv.setWaveform(1, 77); // #2 pattern
+    case 40:  // 
+      drv.setWaveform(0, 37); // #1 pattern - 
+      drv.setWaveform(1, 37); // #2 pattern - 
       drv.setWaveform(2, 0);  // end waveform
       break;
     case 50:  // 
-      drv.setWaveform(0, 4);  // #1 pattern
-      drv.setWaveform(1, 77); // #2 pattern
+      drv.setWaveform(0, 4);  // #1 pattern - 
+      drv.setWaveform(1, 77); // #2 pattern - 
       drv.setWaveform(2, 0);  // end waveform
       break;
-    case 60:  // 
-      drv.setWaveform(0, 4);  // #1 pattern
-      drv.setWaveform(1, 77); // #2 pattern
+    case 60:  // drum change
+      drv.setWaveform(0, 37); // #1 pattern - long double sharp click strong
+      drv.setWaveform(1, 37); // #2 pattern - long double sharp click strong
       drv.setWaveform(2, 0);  // end waveform
       break;
   }
